@@ -34,7 +34,7 @@ export function TasksFormPage() {
       }
     }
     loadTask();
-  }, []);
+  }, [params.id, setValue]);
 
   return (
     <div>
