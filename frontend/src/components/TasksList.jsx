@@ -14,10 +14,18 @@ export function TasksList() {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-3">
-      {tasks.map((task) => (
-        <TaskCard key={task.id} task={task} />
-      ))}
-    </div>
+    <>
+      {tasks.length === 0 ? (
+        <h1 className="text-center font-bold mt-20 uppercase text-lg">
+          Não há tarefa cadastrada
+        </h1>
+      ) : (
+        <div className="grid grid-cols-3 gap-3">
+          {tasks.map((task) => (
+            <TaskCard key={task.id} task={task} />
+          ))}
+        </div>
+      )}
+    </>
   );
 }
